@@ -4,16 +4,6 @@
        xmlns:context="http://www.springframework.org/schema/context"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
         http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
-    <context:property-placeholder location="musicPlayer.properties"/>
-
-    <bean id="musicBean"
-          class="com.kretsev.study.RockMusic">
-    </bean>
-    <bean id="musicPlayer"
-          class="com.kretsev.study.MusicPlayer">
-        <property name="name" value="${musicPlayer.name}"/>
-        <property name="volume" value="${musicPlayer.volume}"/>
-        <property name="music" ref="musicBean"/>
-    </bean>
+    <context:component-scan base-package="com.kretsev.study"/>
 
 </beans>
